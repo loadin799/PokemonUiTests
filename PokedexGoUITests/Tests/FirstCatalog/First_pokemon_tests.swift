@@ -13,9 +13,9 @@ class First_pokemon_tests: BaseUITest {
     override func setUp() {
         super.setUp()
         application.launch()
-}
+    }
     override func tearDown() {
-   
+        
         super.tearDown()
     }
     
@@ -23,7 +23,9 @@ class First_pokemon_tests: BaseUITest {
         
         _ = CatalogBot(test: self)
             .assertTitlePokemon()
+            .tabToBack()
+        
+        _ = Catalog2Bot(test: self)
+            .assertPokemon1()
     }
-    
-    
 }

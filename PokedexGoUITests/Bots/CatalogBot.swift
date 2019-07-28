@@ -12,8 +12,11 @@ import UIBot
 class CatalogBot: Bot {
     
     //Asserts
-    private let title: String = "herbert"
-    private let titlePokemon: String = "herbert #001"
+    private let title: String = "Bulbasaur"
+    private let titlePokemon: String = "Bulbasaur #001"
+    private let btnBackToPokedex: String = "Pokedex Go"
+    private let txtPokemon10: String = "#010, 绿毛虫"
+    private let txtPokemon1: String = "#001, Bulbasaur"
     
     //Inputs
     private let searchField: String = "product_search"
@@ -30,22 +33,8 @@ class CatalogBot: Bot {
         return assertContains(text: titlePokemon)
     }
     
-    
-//    func fill(search: String) -> Self {
-//        return write(text: search, atTextFieldWithID: searchField)
-//    }
-//
-//    func tapCatalogCategoryCell(text: String) -> Self {
-//        return tapLabel(text: text)
-//    }
-//
-//    func tapCatalogProductCell(text: String) -> Self {
-//        return tapLabel(text: text)
-//    }
-//
-//    func scrollUntilFind(labelText: String) -> Self {
-//        return scroll(at: 0, untilTextExists: labelText, direction: .up)
-//    }
-//
+    func tabToBack() -> Self {
+        return tapLabel(text: btnBackToPokedex)
+    }
 }
 

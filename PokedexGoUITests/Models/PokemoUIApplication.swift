@@ -16,6 +16,5 @@ class PokemonUIApplication: XCUIApplication {
         super.init()
         
         launchArguments.append("-FNTesting")
-}
-
+    }
 }

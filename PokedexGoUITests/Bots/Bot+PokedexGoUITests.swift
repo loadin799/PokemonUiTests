@@ -5,11 +5,13 @@
 //  Created by Tulio Bazan da Silva on 28/09/2018.
 //  Copyright © 2018 Livelo. All rights reserved.
 //
-
+import Foundation
 import XCTest
 import UIBot
 
 extension Bot {
+    
+    static let searchItem = "Search Item"
     
     ///Wait a Loading with a text Diaspeare
     func waitLoadingDisapeare(with text: String) -> Self {
@@ -53,4 +55,6 @@ extension Bot {
         }
         return self
     }
+
+    
 }

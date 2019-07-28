@@ -28,8 +28,33 @@ class PokedexGoUITests: XCTestCase {
     }
 
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCUIApplication().navigationBars["Bulbasaur"].buttons["Pokedex Go"].tap()
+        XCUIApplication().navigationBars["Bulbasaur"].buttons["Pokedex Go"].tap()
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let searchField = tablesQuery.children(matching: .searchField).element
+        searchField.tap()
+        searchField.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["#003"]/*[[".cells.staticTexts[\"#003\"]",".staticTexts[\"#003\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.staticTexts["Venusaur #003"].tap()
+        app.navigationBars["Venusaur"].buttons["Pokedex Go"].tap()
+     
+        XCUIApplication().navigationBars["Bulbasaur"].buttons["Pokedex Go"].tap()
+        XCUIApplication().navigationBars["绿毛虫"].buttons["Pokedex Go"].tap()
+        XCUIApplication().tables.children(matching: .searchField).element.tap()
+        
+//        let app = XCUIApplication()
+//        app.tables.children(matching: .searchField).element.tap()
+//        app.tables["Empty list"].children(matching: .searchField).element.tap()
+//
+        
+        
+        let emptyListTable = XCUIApplication().tables["Empty list"]
+        emptyListTable.children(matching: .searchField).element.tap()
+        emptyListTable.buttons["Clear text"].tap()
+        
+        
     }
 
 }
